@@ -17,3 +17,13 @@ if menu == "Inserir":
             st.success(f'Aluno {nome} inserindo com sucesso!')
         else:
             st.warning("O campo nome não pode ser vazio.")
+
+elif menu == "Lista":
+    st.subheader("Listar alunos")
+    alunos = listar_alunos()
+    if alunos:
+        #st.dataframe(alunos)
+        for linha in alunos:
+            st.write(f"ID={linha[0]} | NOME={linha[1]} | IDADE={linha[2]}")
+    else:
+        st.info("Nenhum aluno encontrado.")
